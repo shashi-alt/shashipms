@@ -1,0 +1,116 @@
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+  body {
+    background: url('images/1.jpg');
+  }
+
+  .container {
+    padding-top: 20px;
+    margin: 100px;
+    border: 2px solid burlywood;
+  }
+</style>
+
+<body>
+  <!-- <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Password Management System</a>
+      </div>
+      </div>
+      </nav>
+       <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">password category
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/add-new-category">Add New Category</a></li>
+            <li><a href="/passwordcategory">View all Category</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Password Details
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="add-new-password">Add New Password</a></li>
+            <li><a href="view-all-password">View All Password</a></li>
+          </ul>
+        </li>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          
+        </ul>
+      </ul>
+    </div>
+  </nav> -->
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center" style="color:black;">
+        <%= title %>
+      </h2>
+      <div id="loginbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title" style="color: blue;">Please Login With User Name And Password...</div>
+          </div>
+
+          <div class="pannel-body" style="color: blue;">
+            <form action="/" id="EmployeeForm" class="form-horizontal" method="post" role="form">
+              <%if(msg !='' ){%>
+                <!-- <div id="signupalert" class="alert alert-danger"> -->
+
+                <p style="text-align:center"><br>
+                  <%=msg%>
+                </p>
+
+
+                <!-- </div> -->
+                <%}%>
+
+                  <div class="form-group">
+                    <label for="username" class="col-md-3 control-label">User Name</label>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" name="uname" placeholder="Enter Your User Name" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password" class="col-md-3 control-label">Password</label>
+                    <div class="col-md-8">
+                      <input type="password" class="form-control" name="password" placeholder="Enter your password"
+                        required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <!-- Button -->
+                    <div class="col-md-offset-3 col-md-9">
+                      <input type="submit" name="submit" value="login" class="btn btn-primary">
+                    </div>
+                  </div>
+                  <p>if you don't have an account <a href="/signup">Create New Account</a></p>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<%- include('footer')%>
